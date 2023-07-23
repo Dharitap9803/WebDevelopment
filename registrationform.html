@@ -1,0 +1,107 @@
+<!--Html Document Begins-->
+<!DOCTYPE html>
+<html lang="en">
+    <!--Header Section-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-ede" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Student Registration Form</title>
+</head>
+<!--Body of the Webpage-->
+<body bgcolor="grey">
+    <font face ="Times new roman" size="4">
+    <!--start of the form-->
+    <fieldset>
+    <legend align="center"><h1>REGISTRATION FORM</h1></legend>
+    <form method="get" action="form.php" name="form" align="center">
+    <table bgcolor="orange" border="5" align="center" cellspacing="0" cellpadding="0">
+        <!--Input elements for the form-->
+        <tr>
+            
+            FILL IN THIS FORM TO REGISTER
+            
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td><input type="text" name="fname" value="Enter your first name"/></td>
+        </tr>
+        <tr>
+            <td>Last name</td>
+            <td><input type="text" name="Lname" value="Enter your last name"/></td>
+        </tr>
+        <tr>
+            <td>Enter Username:</td>
+            <td><input type="text" name="uname" value="Set username"/></td>
+        </tr>
+        <tr>
+            <td> Enter Enrollment No.</td>
+            <td><input type="text" name="id" value="Enter your enrollment no."/></td>
+        </tr>
+        <tr>
+            <td>Enter Password:</td>
+            <td><input type="password" name="pwd"value="Set password"/></td>
+        </tr>
+        <tr>
+            <td>Enter Email</td>
+            <td><input type="Email" name="Email" value="Enter your e-mail"/></td>
+        </tr>
+        <tr>
+            <td>Enter Phone Number</td>
+            <td><input type="text" name="country code" value="+91" size="3"/>
+            <input type="number" name="ph" value="Enter your phone number"/></td>
+        </tr>
+        <tr>
+            <td>Choose Gender:</td>
+            <td>
+                <input type="radio"name="gender" value="male">Male
+                <input type="radio"name="gender" value="female">Female
+                <input type="radio"name="gender" value="other">Others
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Date of Birth: </td>
+            <td><input type="date"name="date" value=""/></td>
+        </tr>
+        <tr>
+            <td>Enter Hobbies:</td>
+            <td><input type="checkbox" name="Hobby" value="Dance"/>Dance
+            <input type="checkbox" name="Hobby" value="Painting"/>Painting
+            <input type="checkbox" name="Hobby" value="Trekking"/>Trekking
+            <input type="checkbox" name="Hobby" value="Music"/>Music
+            <input type="checkbox" name="Hobby" value="scating"/>Scating</td>
+        </tr>
+        <tr>
+            <td> Enter City</td>
+            <td><select name="City"
+                <option value ="Select city"></option>Ahmedabad</option>
+                <option>Surat</option>
+                <option>Mumbai</option>
+                <option>Delhi</option>
+                <option>Rajkot</option>
+              </select></td>
+        </tr>
+        <tr>
+            <td>Enter Zipcode</td>
+            <td><input type="number" name="pin" value="Enter your pincode"/></td>
+        </tr>
+        <tr>
+            <td>Enter Address</td>
+            <td><textarea></textarea></td>
+        </tr>
+        <tr>
+            <td>School/University</td>
+            <td><input type="text" name="Uname" value="Enter your School/College "/></td>
+        </tr>
+        <tr>
+            <td>Upload  Resume</td>
+            <td><input type="file" name="file" value="upload resume"/></td>
+        </tr>
+        <tr>
+            <td colspan="0"><input type="submit" value="submit"><p><input type="reset" value="Reset"/></p></td>
+        </tr>
+ </table>
+</fieldset>
+</font>
+</body>
+</html>
