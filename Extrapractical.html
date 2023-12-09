@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<style>
+td{
+background-color: white;
+}
+</style>
+</head>
+<body bgcolor="lightblue">
+<table align="center" cellpadding="5">
+<tr>
+<td colspan="2">
+<input type="text" id="a">
+</td>
+<td colspan="2">
+<input type="text" id="b">
+</td>
+<td rowspan="3">
+<input type="reset" value="Clear">
+</td>
+</tr>
+<tr>
+<td><input type="button" id="add" value="+" onclick="add()"></td>
+<td><input type="button" id="sub" value="-" onclick="sub()"></td>
+<td><input type="button" id="mul" value="*" onclick="mul()"></td>
+<td><input type="button" id="div" value="/" onclick="div()"></td>
+</tr>
+<tr colspan="4">
+<td><p id="res1"></p></td>
+<td><p id="res2"></p></td>
+<td><p id="res3"></p></td>
+<td><p id="res4"></p></td>
+</tr>
+</table>
+<script type="text/javascript">
+function add()
+
+
+{
+var a= parseInt(document.getElementById('a').value);
+var b= parseInt(document.getElementById('b').value);
+var c= a + b;
+document.getElementById('res1').innerHTML= "Addition = "+ c;
+}
+function sub()
+{
+var a= parseInt(document.getElementById('a').value);
+var b= parseInt(document.getElementById('b').value);
+var c= a - b;
+document.getElementById('res2').innerHTML= "Subtraction = "+ c;
+}
+function mul()
+{
+var a= parseInt(document.getElementById('a').value);
+var b= parseInt(document.getElementById('b').value);
+var c= a * b;
+document.getElementById('res3').innerHTML= "Multiplication = "+ c;
+}
+function div()
+{
+var a= parseInt(document.getElementById('a').value);
+var b= parseInt(document.getElementById('b').value);
+var c= a / b;
+document.getElementById('res4').innerHTML= "Division = "+ c;
+}
+</script>
+</body>
+</html>
