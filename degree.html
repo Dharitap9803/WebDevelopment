@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Power</title>
+    <style>
+        button{
+            background-color: white; 
+            color: black; 
+            border: 3px solid black;
+            padding: 5px 5px;
+            text-align: center;
+        }
+        button:hover {
+            background-color: rgb(166, 255, 255);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <table align="center" cellspacing="3" cellpadding="3">
+        <tr>
+            <td>
+                <input type="text" id="a">
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <button onclick="mul()">Click to Run</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p id="res" align="center"></p>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+
+
+
+
+
+  function mul()
+        {
+            var a= parseInt(document.getElementById('a').value);
+            var r= a % 10;
+            var b= parseInt(a/10);
+            var res= 1;
+            for( var i=1; i<= r; i++)
+            {
+                res *= b;
+            }
+            document.getElementById('res').innerHTML= res;
+        }
+    </script>
+</body>
+</html>
