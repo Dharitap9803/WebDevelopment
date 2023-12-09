@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration Form</title>
+    <script>
+        function validateForm() {
+            var uname = document.forms["registrationForm"]["uname"].value;
+            var pwd = document.forms["registrationForm"]["pwd"].value;
+            var pin = document.forms["registrationForm"]["pin"].value;
+            var eno = document.forms["registrationForm"]["eno"].value;
+            var Mno = document.forms["registrationForm"]["Mno"].value;
+            var email = document.forms["registrationForm"]["email"].value;
+
+            var usernamePattern = /^[A-Za-z]+$/;
+            var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            var numericPattern = /^[0-9]+$/;
+            var mobilePattern = /^\d{10}$/;
+
+            if (!uname.match(usernamePattern)) {
+                alert("Username must contain only alphabetic characters");
+                return false;
+            }
+
+            if (pwd === "" || pwd.length < 6) {
+                alert("Password must be at least 6 characters long");
+                return false;
+            }
+
+            if (!pin.match(numericPattern) || pin.length !== 6) {
+                alert("Pincode must be a 6-digit number");
+                return false;
+            }
+
+            if (!eno.match(numericPattern)) {
+                alert("Enrollment number must be a number");
+                return false;
+            }
+
+            if (!Mno.match(mobilePattern)) {
+                alert("Mobile number must be a 10-digit number");
+                return false;
+            }
+
+            if (!email.match(emailPattern)) {
+                alert("Invalid email address");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body bgcolor="orange">
+    <fieldset align="center">
+    <legend align="center"><h3 align="center">Registration Form</h3></legend>
+    <form name="registrationForm" method="get" action="rform.php" onsubmit="return validateForm();">
+        <table bgcolor="lightgreen" border="3" align="center" cellspacing-="2" cellpading="2">
+            <tr>
+                <td>Enter Username:</td>
+                <td><input type="text" name="uname" value=""></td>
+            </tr>
+             <tr>
+                <td>Enter Password:</td>
+                <td><input type="password" name="pwd" value=""></td>
+            </tr>
+             <tr>
+                <td>Enrollment No.:</td>
+                <td><input type="text" name="eno" value=""></td>
+            </tr>
+             <tr>
+                <td>Choose Gender:</td>
+                <td><input type="radio" name="gen" value="MALE">male
+                <input type="radio" name="gen" value="FEMALE">female
+                <input type="radio" name="gen" value="OTHER">other
+                </td>
+            <tr>
+                <td>Enter Email:</td>
+                <td><input type="email" name="email" value=""></td>
+            </tr>
+            <tr>
+                <td>Enter Date of BIrth:</td>
+                <td><input type="date" name="DOB" value=""></td>    
+            </tr>
+            <tr>
+                <td>Enter Hobbies:</td>
+                <td><input type="checkbox" name="sports" value="">sports
+                <input type="checkbox" name="Esports" value="">Esports
+                <input type="checkbox" name="music" value="">music
+                <input type="checkbox" name="reading" value="">reading</td>
+            </tr>    
+             <tr>
+                <td>Enter Address:</td>
+                <td><textarea></textarea></td>    
+            </tr>
+            <tr>
+                <td>Select city :</td>
+                <td><select>
+                    <option>Ahmedabad</option>
+                    <option>Surat</option>
+                    <option>Rajkot </option>
+                    <option>Vadodara</option>
+                    <option>GIFT city</option>
+                </select>
+                </td>    
+            </tr>
+            <tr>
+                <td>Enter Pincode:</td>
+                <td><input type="number" name="pin" value=""></td>    
+            </tr>
+            <tr>
+                <td>Enter Mobile number:</td>
+                <td><input type="number" name="Mno" value=""></td>    
+            </tr>
+            <tr>
+                <td>Upload File(CV):</td>
+                <td><input type="file" name="resume" value=""></td>    
+            </tr>
+            <tr>
+                <td><input type="submit" value="submit"></td> 
+                <td><input type="reset" value="reset"></td>    
+            </tr>
+        </table>
+    </form>
+    </fieldset>
+</body>
+</html>
