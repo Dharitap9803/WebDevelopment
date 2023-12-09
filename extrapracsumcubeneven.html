@@ -1,0 +1,25 @@
+<!DOCTYPE html> <html>
+<head>
+<title>Sum of Cubes of n Even Numbers</title> </head>
+<body>
+<h1>Sum of Cubes of n Even Numbers</h1>
+<form method="post" action="">
+Enter the value of n: <input type="text" name="n"> <input type="submit" value="Calculate Sum">
+</form>
+<?php
+function sumOfCubesOfEvenNumbers($n) {
+$sum = 0; $count = 0; $number = 2;
+while ($count < $n) {
+$sum += $number * $number * $number; $number += 2;
+$count++; }
+return $sum; }
+if ($_SERVER["REQUEST_METHOD"] == "POST") { $inputN = $_POST["n"];
+if (is_numeric($inputN) && $inputN >= 1) {
+$inputN = (int)$inputN;
+$result = sumOfCubesOfEvenNumbers($inputN);
+echo "<p>The sum of the cubes of the first $inputN even numbers is: $result</p>";
+} else {
+echo "<p>Please enter a valid positive integer for 'n'.</p>";
+} }
+?> </body>
+</html>
