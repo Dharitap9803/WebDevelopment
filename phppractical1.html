@@ -1,0 +1,32 @@
+HTML CODE:
+Input [index.php]:
+<!DOCTYPE html>
+<html>
+<body>
+<h1>User Data</h1>
+<?php include 'got_data.php'; ?> </body>
+</html>
+Input [gotdata.php]:
+<?php
+$conn = new mysqli("localhost","root","","IU145"); if ($conn->connect_error)
+{ die("Connection failed: " . $conn- >connect_error);
+}
+$sql = "SELECT * FROM
+gotdata"; $result = $conn-
+>query($sql); if ($result-
+>num_rows > 0)
+{ echo "<table
+border='1'>
+<tr>
+<th> ID</th>
+<th>Username</th>
+<th>Email</th>
+</tr>"; while ($row = $result-
+>fetch_assoc())
+  {
+echo "<tr><td>" . $row['id'] . "</td> <td>" . $row['uname'] . "</td> <td>" . $row['email'] . "</td> </tr>"; } echo
+"</table>";
+} else { echo "No records found";
+}
+$conn->close();
+?>
