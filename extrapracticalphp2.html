@@ -1,0 +1,29 @@
+<!DOCTYPE html> <html>
+<head>
+<title>Palindrome Number Checker</title> </head>
+<body>
+<h1>Palindrome Number Checker</h1>
+<form method="post" action="">
+Enter a number: <input type="text" name="number"> <input type="submit" value="Check">
+</form>
+<?php
+function isPalindrome($number) {
+$numStr = (string)$number;
+$reversedStr = strrev($numStr);
+if ($numStr === $reversedStr) { return true;
+} else {
+return false;
+} }
+if ($_SERVER["REQUEST_METHOD"] == "POST") { $inputNumber = $_POST["number"];
+
+if (is_numeric($inputNumber)) { $inputNumber = (int)$inputNumber;
+if (isPalindrome($inputNumber)) {
+echo "<p>$inputNumber is a palindrome number.</p>";
+} else {
+echo "<p>$inputNumber is not a palindrome number.</p>";
+}
+} else {
+echo "<p>Please enter a valid number.</p>"; }
+}
+?> </body>
+</html>
