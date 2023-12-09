@@ -1,0 +1,24 @@
+<!DOCTYPE html> <html>
+<head>
+<title>Sum of Squares of n Numbers</title> </head>
+<body>
+<h1>Sum of Squares of n Numbers</h1>
+<form method="post" action="">
+Enter the value of n: <input type="text" name="n"> <input type="submit" value="Calculate Sum">
+</form>
+<?php
+function sumOfSquares($n) {
+$sum = 0;
+for ($i = 1; $i <= $n; $i++) {
+$sum += $i * $i; }
+return $sum; }
+if ($_SERVER["REQUEST_METHOD"] == "POST") { $inputN = $_POST["n"];
+if (is_numeric($inputN) && $inputN >= 1) {
+$inputN = (int)$inputN;
+$result = sumOfSquares($inputN);
+echo "<p>The sum of the squares of the first $inputN numbers is: $result</p>";
+} else {
+echo "<p>Please enter a valid positive integer for 'n'.</p>";
+} }
+?> </body>
+</html>
