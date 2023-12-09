@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of Cubes of First n Numbers</title>
+</head>
+<body>
+  <h1>Sum of Cubes of First n Numbers</h1>
+  <label for="numInput">Enter a value for n: </label>
+  <input type="number" id="numInput" min="1" step="1">
+  <button id="calculateButton">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("calculateButton").addEventListener("click", function() {
+      const n = parseInt(document.getElementById("numInput").value);
+      const resultElement = document.getElementById("result");
+
+      if (isNaN(n) || n <= 0) {
+        resultElement.textContent = "Please enter a valid positive integer for n.";
+      } else {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+          sum += i ** 3;
+        }
+        resultElement.textContent = `Sum of cubes of the first ${n} numbers: ${sum}`;
+      }
+    });
+  </script>
+</body>
+</html>
