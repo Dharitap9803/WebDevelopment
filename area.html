@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Area</title>
+</head>
+<body bgcolor="cyan">
+    <br>
+    <table cellpadding="5" cellspacing="0" border="3" align="center" bgcolor="white">
+        <tr>
+            <th colspan="2">For Triangle:</th>
+        </tr>
+        <tr>
+            <td>Enter Height of the Triangle:</td>
+            <td><input type="number" id="h" placeholder="height"></td>
+        </tr>
+        <tr>
+            <td>Enter Base of the Triangle:</td>
+            <td><input type="number" id="b1" placeholder="base"></td>
+        </tr>
+        <tr>
+            <td><button onclick="tri()">Calculate</button></td>
+            <td><p id="res1"></p></td>
+        </tr>
+    </table>
+    <br><br>
+    <table cellpadding="5" cellspacing="0" border="3" align="center" bgcolor="white">
+        <tr>
+            <th colspan="2">For Rectangle:</th>
+        </tr>
+        <tr>
+            <td>Enter Length of the Rectangle:</td>
+            <td><input type="number" id="l" placeholder="length"></td>
+        </tr>
+        <tr>
+            <td>Enter Breadth of the Rectangle:</td>
+            <td><input type="number" id="b2" placeholder="breadth"></td>
+        </tr>
+        <tr>
+            <td><button onclick="rec()">Calculate</button></td>
+         <td><p id="res2"></p></td>
+        </tr>
+    </table>
+<script>
+    function tri()
+    {
+        var h= document.getElementById('h').value;
+        var b1= document.getElementById('b1').value;
+        a1= ( h * b1 )/ 2;
+        document.getElementById('res1').innerHTML= "AREA=  " + a1;
+    }
+    function rec()
+    {
+        var l= document.getElementById('l').value;
+        var b2= document.getElementById('b2').value;
+        a2= l * b2;
+        document.getElementById('res2').innerHTML= "AREA=  " + a2;
+    }
+</script>
+</body>
+</html>
