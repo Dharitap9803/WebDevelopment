@@ -1,0 +1,24 @@
+<!DOCTYPE html> <html>
+<head>
+<title>Sum of n Odd Numbers</title> </head>
+<body>
+<h1>Sum of n Odd Numbers</h1>
+<form method="post" action="">
+Enter the value of n: <input type="text" name="n"> <input type="submit" value="Calculate Sum">
+</form>
+<?php
+function sumOfOddNumbers($n) {
+$sum = 0; $count = 0; $number = 1;
+while ($count < $n) { $sum += $number;
+$number += 2;
+$count++; }
+return $sum; }
+if ($_SERVER["REQUEST_METHOD"] == "POST") { $inputN = $_POST["n"];
+if (is_numeric($inputN) && $inputN >= 1) {
+$inputN = (int)$inputN;
+$result = sumOfOddNumbers($inputN);
+echo "<p>The sum of the first $inputN odd numbers is: $result</p>";
+} else {
+echo "<p>Please enter a valid positive integer.</p>";
+} }
+?> </body>
