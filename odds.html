@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sum of First n Odd Numbers</title>
+</head>
+<body>
+  <h1>Sum of First n Odd Numbers</h1>
+  <label for="numInput">Enter a value for n: </label>
+  <input type="number" id="numInput" min="1" step="1">
+  <button id="calculateButton">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("calculateButton").addEventListener("click", function() {
+      const n = parseInt(document.getElementById("numInput").value);
+      const resultElement = document.getElementById("result");
+
+      if (isNaN(n) || n <= 0) {
+        resultElement.textContent = "Please enter a valid positive integer for n.";
+      } else {
+        let sum = 0;
+        for (let i = 1, count = 0; count < n; i += 2, count++) {
+          sum += i;
+        }
+        resultElement.textContent = `Sum of the first ${n} odd numbers: ${sum}`;
+      }
+    });
+  </script>
+</body>
+</html>
